@@ -1,6 +1,5 @@
 import { NewestProducts } from '@/components/home/NewestProducts';
 import { ProductRow } from '@/components/home/ProductRow';
-import Image from 'next/image';
 
 export default function Home() {
 	return (
@@ -17,11 +16,11 @@ export default function Home() {
 					incomparable tanto para vendedores como para compradores.
 				</p>
 			</div>
-			<NewestProducts />
-			{/* <ProductRow category='newest' />
-			<ProductRow category='templates' />
-			<ProductRow category='icons' />
-			<ProductRow category='uikits' /> */}
+			{/* <NewestProducts /> */}
+			<ProductRow category='newest' />
+			<ProductRow category='template' />
+			<ProductRow category='icon' />
+			<ProductRow category='uikit' />
 		</section>
 	);
 }

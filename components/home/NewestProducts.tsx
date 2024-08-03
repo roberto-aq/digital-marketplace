@@ -1,10 +1,10 @@
 import Link from 'next/link';
 
-import { getProduct } from '@/lib/actions/products.action';
+import { getProducts } from '@/lib/actions/products.action';
 import { ProductCard } from './ProductCard';
 
 export async function NewestProducts() {
-	const data = await getProduct();
+	const data = await getProducts();
 
 	return (
 		<section className='mt-12'>

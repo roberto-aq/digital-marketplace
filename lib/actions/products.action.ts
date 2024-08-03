@@ -57,9 +57,9 @@ export const sellProduct = async (
 	return state;
 };
 
-export const getProduct = async () => {
+export const getProducts = async () => {
 	try {
-		const product = await prisma.product.findMany({
+		const products = await prisma.product.findMany({
 			select: {
 				price: true,
 				smallDescription: true,
@@ -74,7 +74,36 @@ export const getProduct = async () => {
 			},
 		});
 
-		return product;
+		return products;
+	} catch (error) {
+		console.log(error);
+		throw new Error('Algo salió mal, revisar los logs');
+	}
+};
+
+export const getProductsByCategory = async (
+	category: string | undefined,
+	take?: number
+) => {
+	try {
+		const products = await prisma.product.findMany({
+			where: {
+				category: category as CategoryTypes,
+			},
+			select: {
+				price: true,
+				smallDescription: true,
+				name: true,
+				id: true,
+				images: true,
+			},
+			take,
+			orderBy: {
+				createdAt: 'desc',
+			},
+		});
+
+		return products;
 	} catch (error) {
 		console.log(error);
 		throw new Error('Algo salió mal, revisar los logs');
