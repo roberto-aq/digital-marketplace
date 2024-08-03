@@ -109,3 +109,25 @@ export const getProductsByCategory = async (
 		throw new Error('Algo salió mal, revisar los logs');
 	}
 };
+
+export const getProductsByUser = async (userId: string) => {
+	try {
+		const products = await prisma.product.findMany({
+			where: { userId: userId },
+			select: {
+				name: true,
+				images: true,
+				price: true,
+				smallDescription: true,
+				id: true,
+			},
+		});
+
+		return products;
+	} catch (error) {
+		console.log(error);
+		throw new Error(
+			'Error obteniendo los productos de usuario. Revisar los logs'
+		);
+	}
+};
