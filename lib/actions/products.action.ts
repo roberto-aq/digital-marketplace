@@ -56,3 +56,27 @@ export const sellProduct = async (
 
 	return state;
 };
+
+export const getProduct = async () => {
+	try {
+		const product = await prisma.product.findMany({
+			select: {
+				price: true,
+				smallDescription: true,
+				category: true,
+				name: true,
+				id: true,
+				images: true,
+			},
+			take: 4,
+			orderBy: {
+				createdAt: 'desc',
+			},
+		});
+
+		return product;
+	} catch (error) {
+		console.log(error);
+		throw new Error('Algo salió mal, revisar los logs');
+	}
+};
