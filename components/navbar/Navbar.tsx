@@ -13,8 +13,6 @@ const Navbar = async () => {
 	const { getUser } = getKindeServerSession();
 	const user = await getUser();
 
-	console.log(process.env.NEXT_PUBLIC_LOGIN_REDIRECT_URL);
-
 	return (
 		<nav className='relative max-w-7xl w-full flex md:grid md:grid-cols-12 items-center px-4 md:px-8 mx-auto py-7'>
 			<div className='md:col-span-3'>

@@ -75,7 +75,7 @@ export const SettingsForm = ({
 						name='email'
 						type='email'
 						disabled
-						defaultValue={'jan@alenix.de'}
+						defaultValue={email}
 					/>
 				</div>
 			</CardContent>

@@ -76,8 +76,14 @@ export const buyProduct = async (formData: FormData) => {
 				destination: data?.User?.connectedAccountId as string,
 			},
 		},
-		success_url: 'http://localhost:3000/payment/success',
-		cancel_url: 'http://localhost:3000/payment/cancel',
+		success_url:
+			process.env.NODE_ENV === 'development'
+				? `http://localhost:3000/payment/success`
+				: `${process.env.PUBLIC_URL}/payment/success`,
+		cancel_url:
+			process.env.NODE_ENV === 'development'
+				? `http://localhost:3000/payment/cancel`
+				: `${process.env.PUBLIC_URL}/payment/cancel`,
 	});
 
 	return redirect(session.url as string);

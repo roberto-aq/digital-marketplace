@@ -32,3 +32,4 @@ npm run dev
 - **Subida de Archivos**: [Uploadthing](https://uploadthing.com/)
 - **Gestión de Pagos**: [Stripe](https://stripe.com/es-us)
 - **Base de datos**: [Supabase](https://supabase.com/)
+- **Envíos de correos**: [Resend](https://resend.com)
