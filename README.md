@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Descripción
 
-## Getting Started
+Portafolio web dinámico con dashboard administrativo
 
-First, run the development server:
+## Levantar el desarrollo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+1. Clonar el repositorio
+
+2. Instalar dependencias
+
+```
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Crear una copia del .env.template y renombrarlo a .env y cambiar variables de entorno.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+4. Crearse una cuenta de Supabase y hacer la configuración de prisma
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+5. Hacer el push a supabase con el siguiente comando
 
-## Learn More
+```
+npx prisma db push
+```
 
-To learn more about Next.js, take a look at the following resources:
+Correr el proyecto
+npm run dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Herramientas y Tecnologías Utilizadas
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Autenticación**: [Kinde](https://app.kinde.com/auth/cx/_:nav&m:register&psid:f105452d7044486f9f0f6125a205b3da)
+- **Estilos**: [Shadcn](https://ui.shadcn.com/docs/installation)
+- **Subida de Archivos**: [Uploadthing](https://uploadthing.com/)
+- **Gestión de Pagos**: [Stripe](https://stripe.com/es-us)
+- **Base de datos**: [Supabase](https://supabase.com/)

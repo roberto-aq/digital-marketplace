@@ -1,6 +1,9 @@
 import Image from 'next/image';
 
-import { getProductById } from '@/lib/actions/one-product.action';
+import {
+	buyProduct,
+	getProductById,
+} from '@/lib/actions/one-product.action';
 import { ProductDescription } from '@/components/product/ProductDescription';
 import { type JSONContent } from '@tiptap/react';
 
@@ -49,7 +52,7 @@ export default async function ProductPage({
 				<p className='mt-2 text-muted-foreground'>
 					{data?.smallDescription}
 				</p>
-				<form >
+				<form action={buyProduct}>
 					<input type='hidden' name='id' value={data?.id} />
 					<BuyButton price={data?.price as number} />
 				</form>

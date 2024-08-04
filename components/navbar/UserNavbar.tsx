@@ -59,7 +59,9 @@ export const UserNavbar = ({ name, userImage, email }: Props) => {
 					<DropdownMenuItem asChild>
 						<Link href='/my-products'>Mis Productos</Link>
 					</DropdownMenuItem>
-					<DropdownMenuItem>Subscription</DropdownMenuItem>
+					<DropdownMenuItem asChild>
+						<Link href='/billing'>Facturación</Link>
+					</DropdownMenuItem>
 				</DropdownMenuGroup>
 
 				<DropdownMenuSeparator />

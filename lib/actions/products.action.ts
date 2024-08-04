@@ -4,6 +4,7 @@ import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import { productSchema, State } from '../validations';
 import prisma from '../prisma';
 import { type CategoryTypes } from '@prisma/client';
+import { redirect } from 'next/navigation';
 
 export const sellProduct = async (
 	prevState: any,
@@ -36,7 +37,7 @@ export const sellProduct = async (
 		return state;
 	}
 
-	await prisma.product.create({
+	const data = await prisma.product.create({
 		data: {
 			name: validateFields.data.name,
 			category: validateFields.data.category as CategoryTypes,
@@ -49,12 +50,7 @@ export const sellProduct = async (
 		},
 	});
 
-	const state: State = {
-		status: 'success',
-		message: 'Tu producto ha sido creado',
-	};
-
-	return state;
+	return redirect(`/product/${data.id}`);
 };
 
 export const getProducts = async () => {
