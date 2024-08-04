@@ -1,6 +1,22 @@
+# MARSHAL UI
+
 ## Descripción
 
-Portafolio web dinámico con dashboard administrativo
+Este proyecto es un marketplace innovador diseñado por la compra y venta de recursos digitales. Marshal UI facilita las transacciones entre creadores y compradores en tres categorías.
+
+1. Plantillas
+2. UI Kits
+3. Iconos
+
+Aprovechando la potencia de Stripe para procesar pagos, ofrecemos una experiencia de compra segura y sin complicaciones, permitiendo a los vendedores recibir pagos directamente con una comisión competitiva del 10%.
+
+## Características Principales
+
+- **Categorías Especializadas**: Enfoque en plantillas, UI kits e iconos para satisfacer las necesidades de diseñadores y desarrolladores.
+- **Pagos Directos**: Integración con Stripe para facilitar transacciones seguras y eficientes.
+- **Comisión Competitiva**: Solo un 10% de comisión, maximizando las ganancias de los vendedores.
+- **Interfaz Intuitiva**: Diseño fácil de usar tanto para compradores como para vendedores.
+- **Gestión de Productos**: Los vendedores pueden subir, gestionar y vender sus recursos digitales de forma sencilla.
 
 ## Levantar el desarrollo
 
@@ -22,8 +38,11 @@ npm install
 npx prisma db push
 ```
 
-Correr el proyecto
+6. Correr el proyecto
+
+```
 npm run dev
+```
 
 ## Herramientas y Tecnologías Utilizadas
 
