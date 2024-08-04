@@ -1,6 +1,7 @@
 import { ProductCard } from '@/components/home/ProductCard';
 import { getProductsByCategory } from '@/lib/actions/products.action';
 import { notFound } from 'next/navigation';
+import { unstable_noStore as noStore } from 'next/cache';
 
 async function getData(category: string) {
 	let input;
@@ -27,9 +28,9 @@ async function getData(category: string) {
 		}
 	}
 
-    const data = await getProductsByCategory(input)
+	const data = await getProductsByCategory(input);
 
-    return data
+	return data;
 }
 
 export default async function CategoryPage({
@@ -37,6 +38,7 @@ export default async function CategoryPage({
 }: {
 	params: { category: string };
 }) {
+	noStore();
 	const data = await getData(params.category);
 
 	return (

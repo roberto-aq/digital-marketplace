@@ -15,12 +15,14 @@ import {
 	CarouselPrevious,
 } from '@/components/ui/carousel';
 import { BuyButton } from '@/components/product/BuyButton';
+import { unstable_noStore as noStore } from 'next/cache';
 
 export default async function ProductPage({
 	params,
 }: {
 	params: { id: string };
 }) {
+	noStore();
 	const data = await getProductById(params.id);
 
 	return (

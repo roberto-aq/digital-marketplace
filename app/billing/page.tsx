@@ -12,6 +12,7 @@ import {
 	CreateStripeAccoutnLink,
 	GetStripeDashboardLink,
 } from '@/lib/actions/stripe.action';
+import { unstable_noStore as noStore } from 'next/cache';
 
 async function getData(userId: string) {
 	const data = await prisma.user.findUnique({
@@ -27,6 +28,7 @@ async function getData(userId: string) {
 }
 
 export default async function BillingPage() {
+	noStore();
 	const { getUser } = getKindeServerSession();
 	const user = await getUser();
 
